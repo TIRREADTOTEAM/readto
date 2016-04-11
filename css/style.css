@@ -1,0 +1,56 @@
+
+
+#container{
+	width:50%;
+	margin:auto;
+	text-align: center;
+}
+.toolname{
+	font-size: 40pt;
+	font-family: Times New Roman;
+	color:#2196F3;
+
+}
+
+.comment{
+	border: 1px solid #bdb9b9;
+	padding:10px;
+	background-color: white;
+	
+}
+.savedcomment{
+	border: 1px solid #bdb9b9;
+	padding:10px;
+	background-color: white;
+	
+}
+.commentuser{
+	width:80%;
+	float:left;
+	padding-top: 5px;
+	font-size: 15pt;
+	font-weight:bold;
+	font-family: sans-serif;
+}
+.commentimg{
+	width:15%;
+	float:left;
+}
+.commentheader{
+	padding:5px;
+	vertical-align: middle;
+	margin-bottom: 30px;
+	color:#2196F3;
+}
+.commentbutton{
+	margin-top:10px;
+}
+.w3-btn{width:120px;}
+
+.pdfbuttons{
+	margin-bottom:10px;
+}
+.like{
+	float:left;
+	margin-top:10px;
+}

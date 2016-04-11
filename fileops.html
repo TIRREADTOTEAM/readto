@@ -1,0 +1,44 @@
+<html>
+<head>
+	<script src="js/angular.js"></script>
+	<script src="js/script.js"></script>
+	<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+	<link href="css/style.css" rel="stylesheet" type="text/css"/>
+
+</head>
+<body ng-app="myView" ng-controller="myCtrl">
+	<div ng-repeat="savedcomment in savedcomments" data-ng-style="savedcomment.style" id="{{savedcomment.id}}" class="savedcomment"><div class="commentheader"><div class="commentimg"><img src="images/usericon.png" width="30px" height="30px"/></div><div class="commentuser">Swena Gupta</div> </div><div class="commentheader">{{savedcomment.data}}</div></div>
+	<div ng-repeat="comment in comments" data-ng-style="comment.style" id="{{comment.id}}" class="comment"><div class="commentheader"><div class="commentimg"><img src="images/usericon.png" width="30px" height="30px"/></div><div class="commentuser">Swena Gupta</div> </div><textarea rows="4" cols="30" ></textarea><br/><input type="button" value="Comment" class="w3-btn w3-blue commentbutton" ng-click="savecomment(comment.id);"/></div>
+
+	<div id="container">
+		<div class="logo">
+			<span class="toolname"><b>{{toolName}}</b></span><br/>
+			<i>{{tagLine}}</i>
+		</div>
+		
+		<br/>
+		<br/>
+		<div class="pdfbuttons">
+		  <button id="prev" ng-click="checknupdate();" class="w3-btn w3-blue">Previous</button>
+		  <button id="next" ng-click="checknupdate();" class="w3-btn w3-blue">Next</button>
+		  &nbsp; &nbsp;
+		  <span>Page: <span id="page_num"></span> / <span id="page_count"></span></span>
+		</div>
+
+		<div ng-click="opendiv($event);">
+		  <canvas id="the-canvas" style="border:1px solid black"></canvas>
+		</div>
+		<div class="like">
+			{{pdflikecount}} {{likestring}} <img ng-src="{{buttonlike}}" width="30px" height="30px" ng-click="togglelike();"/>
+		</div>
+
+		<!-- for legacy browsers add compatibility.js -->
+		<!--<script src="js/compatibility.js"></script>-->
+
+		<script src="https://raw.github.com/mozilla/pdf.js/gh-pages/build/pdf.js"></script>
+
+		<script id="script" src="js/loadpdf.js"></script>
+		
+	</div>
+</body>
+</html>
