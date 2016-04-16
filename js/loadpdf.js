@@ -2,7 +2,8 @@
   // If absolute URL from the remote server is provided, configure the CORS
   // header on that server.
   //
-  var url = 'pdf/HaskellBook.pdf';
+  x=function(val){
+  var url = val;
   /*uint=new Uint8Array(url.length);
 for(var i=0,j=url.length;i<j;++i){
   uint[i]=url.charCodeAt(i);
@@ -111,3 +112,4 @@ for(var i=0,j=url.length;i<j;++i){
     // Initial/first page rendering
     renderPage(pageNum);
   });
+}
