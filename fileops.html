@@ -14,14 +14,14 @@
 	<div id="container">
 		<div class="logo">
 			<span class="toolname"><b>{{toolName}}</b></span><br/>
-			<i>{{tagLine}}</i>
+			<i class="tagline">{{tagLine}}</i>
 		</div>
 		
-		<br/>
-		<br/>
+		<div id="clearspace"></div>
+		<hr/>
 		<div class="pdfbuttons">
-		  <button id="prev" ng-click="checknupdate();" class="w3-btn w3-blue">Previous</button>
-		  <button id="next" ng-click="checknupdate();" class="w3-btn w3-blue">Next</button>
+		  <button id="prev" ng-click="checknupdate('prev');" class="w3-blue w3-btn">Previous</button>
+		  <button id="next" ng-click="checknupdate('next');" class="w3-blue w3-btn">Next</button>
 		  &nbsp; &nbsp;
 		  <span>Page: <span id="page_num"></span> / <span id="page_count"></span></span>
 		</div>
