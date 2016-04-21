@@ -1,13 +1,9 @@
 <html lang="en">
 <head>
-	<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.js"></script>
-	<script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.3/angular.js"></script>
-	<script src="js/script.js"></script>
 	<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
 	<link href="css/style.css" rel="stylesheet" type="text/css"/>
-
 </head>
-<body id="control" ng-app="myView" ng-controller="uploadCtrl">
+<body>
 	<div id="container">
 		<div class="logo">
 			<span class="toolname"><b>{{toolName}}</b></span><br/>
@@ -17,13 +13,13 @@
 		<br/>
 		<br/>
 
-		<form action="" method="post" enctype="multipart/form-data">
+		<form action="upload.php" method="POST" enctype="multipart/form-data">
 		Name: <input type="text" name="Name"/><br>
 		ISBN: <input type="text" name="ISBN"/><br>
 		author: <input type="text" name="author"/><br>
-		File Upload: <input type="file" name="uploadfile" file-model="myFile"/><br>
+		File Upload: <input type="file" name="fileToUpload"/><br>
 		Notes about the file: <input type="text" name="note"/><br>
-		<input type="submit" value="Submit" ng-click="uploadFile()"/>
+		<button type="submit" name="submit">PRESS</button>
 		</form>
 
 		
