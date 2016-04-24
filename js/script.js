@@ -1,5 +1,10 @@
 var app = angular.module('myView', []);
 
+app.controller('myUploadPdf', function($scope,$http,pdfName){
+    $scope.toolName="ReadTo";
+    $scope.tagLine="Enhance your reading experience...";
+
+});
 app.controller('mySelectPdf', function($scope,$http,pdfName){
     $scope.toolName="ReadTo";
     $scope.tagLine="Enhance your reading experience...";

@@ -9,7 +9,7 @@ body{
 	margin:auto;
 	background: white;
     padding: 20px;
-    text-align: center;
+    /*text-align: center;*/
 }
 .logo{
     font-family: 'Indie Flower', cursive;
@@ -164,6 +164,16 @@ body{
 width: 100%;
 
 }
+.filecontent{
+
+
+    margin-top:7%;
+    dispaly:inline-block;
+    clear: both;
+    width: 100%;
+
+
+}
 #clearspace{
     display:block;
     width:10px;
@@ -197,3 +207,18 @@ ul#tabs li:hover {
 ul#tabs li.active {
     background-color: #238b68;
 }
+.file-upload {
+    position: relative;
+    overflow: hidden;
+    margin: 10px; }
+
+.file-upload input.file-input {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    cursor: pointer;
+    opacity: 0;
+    filter: alpha(opacity=0); }
