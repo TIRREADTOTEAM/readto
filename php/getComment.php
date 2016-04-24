@@ -36,8 +36,8 @@
 			    $date = $line['date'];
 			    $scrollpos = $line['scroll_pos'];
 			    $id = $line['html_id'];
-			    $left = $line['left_pos'];
-			    $str = '{"style":{"position": "absolute","top":'.$scrollpos.',"left":'.$left.',"display":"block","width":"20%","height":"20%"},"id":"'.$id.'", "data":"'.$comment.'"}';
+			    $left = $_POST[0]['left'];
+			    $str = '{"style":{"position": "absolute","top":'.$scrollpos.',"left":'.$left.',"display":"block","width":"20%"},"id":"'.$id.'", "data":"'.$comment.'"}';
 			    //$arr1 = json_decode($str, true);
 			    array_push($arr, $str);
 		}

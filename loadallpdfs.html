@@ -20,6 +20,7 @@
     			<h1 class="heading">SELECT A BOOK</h1>
     		</div>
     		<div class="buttonset">
+				<!--<input ng-repeat="pdf in pdfs" class="pdfbutton" type="button" value="{{pdf.bookname}}" ng-click="shareMyPdfName('{{pdf.bookloc}}','{{pdf.bookname}}');localStorage.setItem('book','{{pdf.bookloc}}');"/>-->
     			<input class="pdfbutton" type="button" value="Haskell" ng-click="shareMyPdfName('pdf/HaskellBook.pdf','Haskell Book');" onclick="localStorage.setItem('book', 'pdf/HaskellBook.pdf');"/>
     			<input class="pdfbutton" type="button" value="Algo" ng-click="shareMyPdfName('pdf/algorithms_alternate.pdf','Algorithm');" onclick="localStorage.setItem('book', 'pdf/algorithms_alternate.pdf');"/>
     		</div>

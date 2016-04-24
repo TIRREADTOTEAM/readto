@@ -1,57 +1,130 @@
 <html>
 <head>
-	<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.js"></script>
-	<script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.3/angular.js"></script>
-	<script src="js/script.js"></script>
-	<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
-	<link href="css/style.css" rel="stylesheet" type="text/css"/>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.3/angular.js"></script>
+    <script src="js/script.js"></script>
+    <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+    <link href="css/style.css" rel="stylesheet" type="text/css"/>
 
 </head>
 <body id="control" ng-app="myView" ng-controller="myCtrl">
-	<div ng-repeat="savedcomment in savedcomments" data-ng-style="savedcomment.style" id="{{savedcomment.id}}" class="savedcomment"><div class="commentheader"><div class="commentimg"><img src="images/usericon.png" width="30px" height="30px"/></div><div class="commentuser">Swena Gupta</div> </div><div class="commentheader">{{savedcomment.data}}</div></div>
-	<div ng-repeat="comment in comments" data-ng-style="comment.style" id="{{comment.id}}" class="comment"><div class="commentheader"><div class="commentimg"><img src="images/usericon.png" width="30px" height="30px"/></div><div class="commentuser">Swena Gupta</div> </div><textarea rows="4" cols="30" ></textarea><br/><input type="button" value="Comment" class="w3-btn w3-blue commentbutton" ng-click="savecomment(comment.id);"/></div>
+    <div ng-repeat="savedcomment in savedcomments" data-ng-style="savedcomment.style" id="{{savedcomment.id}}" class="savedcomment">
+        <div class="commentheader">
+            <div class="commentimg">
+                <img src="images/usericon.png" width="30px" height="30px"/>
+            </div>
+            <div class="commentuser">
+                Swena Gupta
+            </div>
+        </div>
+        <div class="commentheader">
+            {{savedcomment.data}}
+        </div>
+    </div>
+    <div ng-repeat="comment in comments" data-ng-style="comment.style" id="{{comment.id}}" class="comment">
+        <div class="commentheader">
+            <div class="commentimg">
+                <img src="images/usericon.png" width="30px" height="30px"/>
+            </div>
+            <div class="commentuser">
+                Swena Gupta
+            </div>
+        </div>
+        <textarea rows="4" cols="30" >
 
-	<div id="container">
-		<div class="logo">
-			<span class="toolname"><b>{{toolName}}</b></span><br/>
-			<i class="tagline">{{tagLine}}</i>
-		</div>
-		
-		<div id="clearspace"></div>
-		<hr/>
-		<div class="pdfbuttons">
-		  <button id="prev" ng-click="checknupdate('prev');" class="w3-blue w3-btn">Previous</button>
-		  <button id="next" ng-click="checknupdate('next');" class="w3-blue w3-btn">Next</button>
-		  &nbsp; &nbsp;
-		  <span>Page: <span id="page_num"></span> / <span id="page_count"></span></span>
-		</div>
+        </textarea>
+        <br/>
+        <input type="button" value="Comment" class="w3-btn w3-blue commentbutton" ng-click="savecomment(comment.id);"/>
+    </div>
+    <ul ng-init="tab=1;" id="tabs" data-ng-style="listyle">
+        <li ng-repeat="sumup in summary" ng-click="GetDetails(sumup,getSummaryIndex(sumup) + 1);" id="a{{getSummaryIndex(sumup) + 1}}" ng-class="{active:$first}">
+            <a href >{{getSummaryIndex(sumup) + 1}}</a>
+        </li>
+    </ul>
+    <div data-ng-style="details.style" id="{{details.id}}" class="summary" ng-hide="summary.length<1">
+        <div class="summaryaddheader">
+            <input type="button" value="Add Summary" class="summaryaddbtn w3-white w3-btn" ng-click="addsummary();"/>
+        </div>
+        <div class="summarymainheader">
 
-		<div ng-click="opendiv($event);">
-		  <canvas id="the-canvas" style="border:1px solid black"></canvas>
-		</div>
-		<div class="like">
-			{{pdflikecount}} {{likestring}} <img ng-src="{{buttonlike}}" width="30px" height="30px" ng-click="togglelike();"/>
-		</div>
+            <div class="summaryheader">
+                <div class="summaryimg">
+                    <img src="images/usericon.png" width="30px" height="30px"/>
+                </div>
+                <div class="summaryuser">
+                    Swena Gupta
+                </div>
+            </div>
 
-		<!-- for legacy browsers add compatibility.js -->
-		<!--<script src="js/compatibility.js"></script>-->
+        </div>
+        <div class="summarymaincontent">
+            <div class="summarycontent">
+                {{details.data}}
+            </div>
+        </div>
+    </div>
+    <div ng-show="!summary.length" data-ng-style="nullsummarystyle" class="summary">
+        <div class="summarymainheader">
+            <div class="summaryheader">
+                <div class="summaryimg">
+                    <img src="images/usericon.png" width="30px" height="30px"/>
+                </div>
+                <div class="summaryuser">
+                    Swena Gupta
+                </div>
+            </div>
+        </div>
+        <div class="summarymaincontent">
+            <div class="summarycontent">
+                <textarea id="nullsummary" placeholder="Add your summary for this page..." data-ng-style="nullsummary"></textarea>
+                <input type="button" value="Post" class="w3-btn w3-white summarybutton" ng-click="savesummary();"/>
+            </div>
+        </div>
+    </div>
 
-		<script src="https://raw.github.com/mozilla/pdf.js/gh-pages/build/pdf.js"></script>
+    <div id="container">
+        <div class="logo">
+            <span class="toolname"><b>{{toolName}}</b></span><br/>
+            <i class="tagline">{{tagLine}}</i>
+        </div>
 
-		<script id="script" src="js/loadpdf.js"></script>
-		<script>
-		
-		x(localStorage.getItem("book"));
-		</script>
+        <div id="clearspace"></div>
+        <hr/>
+        <div class="pdfbuttons" id="buttonpos">
+          <button id="prev" ng-click="checknupdate('prev');" class="w3-blue w3-btn">Previous</button>
+          <button id="next" ng-click="checknupdate('next');" class="w3-blue w3-btn">Next</button>
+          &nbsp; &nbsp;
+          <span>Page: <span id="page_num"></span> / <span id="page_count"></span></span>
+        </div>
 
-		<br/>
+        <div ng-click="opendiv($event);" id="pdfcontainer">
+          <canvas id="the-canvas" style="border:1px solid black"></canvas>
+        </div>
+        <div class="like">
+            {{pdflikecount}} {{likestring}} <img ng-src="{{buttonlike}}" width="30px" height="30px" ng-click="togglelike();"/>
+        </div>
 
-		<br/>
-		<hr/>
+        <!-- for legacy browsers add compatibility.js -->
+        <!--<script src="js/compatibility.js"></script>-->
 
-		<div id="footer"> Copyright 2016 | ReadTo Developers</div>
-		<br/>
+        <script src="https://raw.github.com/mozilla/pdf.js/gh-pages/build/pdf.js"></script>
 
-	</div>
+        <script id="script" src="js/loadpdf.js"></script>
+        <script>
+
+        x(localStorage.getItem("book"));
+
+
+        </script>
+
+        <br/>
+
+        <br/>
+        <hr/>
+
+        <div id="footer"> Copyright 2016 | ReadTo Developers</div>
+        <br/>
+
+    </div>
 </body>
 </html>

@@ -1,16 +1,15 @@
 
 @import url(https://fonts.googleapis.com/css?family=Indie+Flower);
 body{
-    background: #cceeff;
+    /*background: #cceeff;*/
+    background:url("../images/bg.png");
 }
 #container{
-	width:52.5%;
+	width:54%;
 	margin:auto;
 	background: white;
     padding: 20px;
-   
-
-
+    text-align: center;
 }
 .logo{
     font-family: 'Indie Flower', cursive;
@@ -41,11 +40,11 @@ body{
     font-size: 50px;
     color: #fff;
     padding: 20px 30px;
-    background-color: #ec528d;
-    background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(hsla(338, 90%, 80%, .8)), to(hsla(338, 90%, 70%, .2)));
-    background-image: -webkit-linear-gradient(hsla(338, 90%, 80%, .8), hsla(338, 90%, 70%, .2));
-    background-image: -moz-linear-gradient(hsla(338, 90%, 80%, .8), hsla(338, 90%, 70%, .2));
-    background-image: -o-linear-gradient(hsla(338, 90%, 80%, .8), hsla(338, 90%, 70%, .2));
+    background-color: #238b68;
+    background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(hsla(160, 60%, 49%, 0.8)), to(hsla(160, 60%, 34%, 0.2)));
+    background-image: -webkit-linear-gradient(hsla(160, 60%, 49%, 0.8), hsla(160, 60%, 34%, 0.2));
+    background-image: -moz-linear-gradient(hsla(160, 60%, 49%, 0.8), hsla(160, 60%, 34%, 0.2));
+    background-image: -o-linear-gradient(hsla(160, 60%, 49%, 0.8), hsla(160, 60%, 34%, 0.2));
     -webkit-border-radius: 8px;
     -moz-border-radius: 8px;
     border-radius: 8px;
@@ -71,7 +70,9 @@ body{
 	border: 1px solid #bdb9b9;
 	padding:10px;
 	background-color: white;
-	
+    word-wrap:break-word;
+
+
 }
 .commentuser{
 	width:80%;
@@ -90,15 +91,63 @@ body{
 	vertical-align: middle;
 	margin-bottom: 30px;
 	color:#2196F3;
+    word-wrap:break-word;
+
 }
 .commentbutton{
 	margin-top:10px;
 }
+
+.summary{
+    border: 1px solid #bdb9b9;
+
+    background-color:#2196F3;
+}
+.summaryuser{
+    width:80%;
+    float:left;
+    padding-top: 5px;
+    font-size: 15pt;
+    font-weight:bold;
+    font-family: sans-serif;
+}
+.summaryimg{
+    width:15%;
+    float:left;
+}
+.summarymainheader{
+    color:#2196F3;
+    background-color: white;
+}
+.summaryheader{
+    padding:15px;
+    vertical-align: middle;
+    display:block;
+    height:55px;
+}
+
+.summarycontent{
+    padding:15px;
+    vertical-align: middle;
+    word-wrap:break-word;
+    color:white;
+}
+.summarybutton{
+    margin-top:10px;
+}
+.summaryaddheader{
+    border-bottom:1px solid #bdb9b9;
+}
 .w3-btn{width:120px;}
+.summaryaddbtn{
+    width:100%;
+}
+
 
 .pdfbuttons{
 	margin-bottom:10px;
     text-align: center;
+
 }
 .like{
 	float:left;
@@ -123,4 +172,28 @@ width: 100%;
 }
 #footer{
     text-align: center;
+}
+#nullsummary{
+    width:100%;
+    color:black;
+}
+ul#tabs {
+    list-style-type: none;
+    padding: 0;
+    text-align: center;
+}
+ul#tabs li {
+    display: inline-block;
+    background-color: #32c896;
+    border-bottom: solid 5px #238b68;
+    padding: 5px 20px;
+    margin-bottom: 4px;
+    color: #fff;
+    cursor: pointer;
+}
+ul#tabs li:hover {
+    background-color: #238b68;
+}
+ul#tabs li.active {
+    background-color: #238b68;
 }
