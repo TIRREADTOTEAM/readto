@@ -9,6 +9,13 @@ body{
 	margin:auto;
 	background: white;
     padding: 20px;
+    text-align: center;
+}
+#container1{
+    width:54%;
+    margin:auto;
+    background: white;
+    padding: 20px;
     /*text-align: center;*/
 }
 .logo{
@@ -222,3 +229,4 @@ ul#tabs li.active {
     cursor: pointer;
     opacity: 0;
     filter: alpha(opacity=0); }
+

@@ -10,7 +10,7 @@ app.controller('mySelectPdf', function($scope,$http,pdfName){
     $scope.tagLine="Enhance your reading experience...";
 	$scope.pdfNameShare = [];
     $scope.pdfs=[];
-    var request = $http({
+   /* var request = $http({
         method: "post",
         url: window.location.href + "/../php/getPdfs.php",
         data: [{
@@ -30,7 +30,7 @@ app.controller('mySelectPdf', function($scope,$http,pdfName){
 
     request.error(function(error){
         alert(error);
-    });
+    });*/
 	$scope.shareMyPdfName = function (myloc,myname) {
 
 	   $scope.pdfLocShare = myloc;
@@ -330,6 +330,7 @@ app.controller('myCtrl', function($scope,$http,pdfName) {
     		url: window.location.href + "/../php/getComment.php",
     		data: [{'pageno': $scope.count,
     				'leftval': containerleft,
+                    'scrollpos':topval,
     				'date': currdate,
     				'book': $scope.sharedPDFName,
     				'data': buttonelem,
