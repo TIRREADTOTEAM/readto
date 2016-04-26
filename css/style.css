@@ -8,7 +8,7 @@ body{
 	width:54%;
 	margin:auto;
 	background: white;
-    /*padding: 20px;*/
+    /*padding-left: 20px;*/
     text-align: center;
 }
 #container1{
@@ -78,8 +78,8 @@ body{
 	padding:10px;
 	background-color: white;
     word-wrap:break-word;
-
-
+    overflow:auto;
+    min-height:15%;
 }
 .commenttextarea{
     width:100%;
@@ -112,6 +112,8 @@ body{
     border: 1px solid #bdb9b9;
 
     background-color:#2196F3;
+    overflow:auto;
+
 }
 .summaryuser{
     width:80%;
