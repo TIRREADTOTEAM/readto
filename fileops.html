@@ -30,7 +30,7 @@
                 Swena Gupta
             </div>
         </div>
-        <textarea rows="4" cols="30" ></textarea>
+        <textarea rows="4" class="commenttextarea"></textarea>
         <br/>
         <input type="button" value="Comment" class="w3-btn w3-blue commentbutton" ng-click="savecomment(comment.id);"/>
     </div>
@@ -39,6 +39,24 @@
             <a href >{{getSummaryIndex(sumup) + 1}}</a>
         </li>
     </ul>
+    <div ng-show="!summary.length" data-ng-style="nullsummarystyle" class="summary">
+        <div class="summarymainheader">
+            <div class="summaryheader">
+                <div class="summaryimg">
+                    <img src="images/usericon.png" width="30px" height="30px"/>
+                </div>
+                <div class="summaryuser">
+                    Swena Gupta
+                </div>
+            </div>
+        </div>
+        <div class="summarymaincontent">
+            <div class="summarycontent">
+                <textarea id="nullsummary" placeholder="Add your summary for this page..." data-ng-style="nullsummary"></textarea>
+                <input type="button" value="Post" class="w3-btn w3-white summarybutton" ng-click="savesummary();"/>
+            </div>
+        </div>
+    </div>
     <div data-ng-style="details.style" id="{{details.id}}" class="summary" ng-hide="summary.length<1">
         <div class="summaryaddheader">
             <input type="button" value="Add Summary" class="summaryaddbtn w3-white w3-btn" ng-click="addsummary();"/>
@@ -61,24 +79,7 @@
             </div>
         </div>
     </div>
-    <div ng-show="!summary.length" data-ng-style="nullsummarystyle" class="summary">
-        <div class="summarymainheader">
-            <div class="summaryheader">
-                <div class="summaryimg">
-                    <img src="images/usericon.png" width="30px" height="30px"/>
-                </div>
-                <div class="summaryuser">
-                    Swena Gupta
-                </div>
-            </div>
-        </div>
-        <div class="summarymaincontent">
-            <div class="summarycontent">
-                <textarea id="nullsummary" placeholder="Add your summary for this page..." data-ng-style="nullsummary"></textarea>
-                <input type="button" value="Post" class="w3-btn w3-white summarybutton" ng-click="savesummary();"/>
-            </div>
-        </div>
-    </div>
+
 
     <div id="container">
         <div class="logo">

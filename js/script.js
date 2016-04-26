@@ -45,7 +45,7 @@ app.controller('myCtrl', function($scope,$http,pdfName) {
     var containertop=document.getElementById('pdfcontainer').offsetTop - document.getElementById('pdfcontainer').clientHeight;
     //var containertop = 200;
     var containerleft=document.getElementById('pdfcontainer').offsetLeft+document.getElementById('pdfcontainer').clientWidth;
-    $scope.nullsummarystyle={"position": "absolute","top":containertop,"left":"20","display":"block","width":"20%"};
+    $scope.nullsummarystyle={"position": "absolute","top":containertop,"left":"20","width":"20%"};
     $scope.nullsummary={"height":"800px"};
 	$scope.toolName="ReadTo";
 	$scope.tagLine="Enhance your reading experience...";
@@ -157,7 +157,7 @@ app.controller('myCtrl', function($scope,$http,pdfName) {
 
 
 	$scope.checknupdate =function(btn){
-
+        
 		$scope.count=document.getElementById('page_num').innerHTML;
 		
 		var count=parseInt($scope.count);
@@ -306,7 +306,7 @@ app.controller('myCtrl', function($scope,$http,pdfName) {
 		//var canvasleft=canvasid.offsetLeft+2;
 		var topval=$event.offsetY+canvastop;
 		//var leftval=canvasid.offsetWidth+canvasleft;
-		$scope.comments.push({'style':{'position': 'absolute','top':topval,'left':containerleft,'display':'block','width':'20%'},'id':'comment'+topval+$scope.commentnum});
+		$scope.comments.push({'style':{'position': 'absolute','top':topval,'left':containerleft,'display':'block'},'id':'comment'+topval+$scope.commentnum});
 		$scope.commentnum++;
 	};
 

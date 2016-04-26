@@ -71,7 +71,7 @@ body{
 	border: 1px solid #bdb9b9;
 	padding:10px;
 	background-color: white;
-	
+    min-width:20%;
 }
 .savedcomment{
 	border: 1px solid #bdb9b9;
@@ -80,6 +80,9 @@ body{
     word-wrap:break-word;
 
 
+}
+.commenttextarea{
+    width:100%;
 }
 .commentuser{
 	width:80%;
