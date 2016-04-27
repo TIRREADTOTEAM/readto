@@ -42,11 +42,11 @@ app.controller('mySelectPdf', function($scope,$http,pdfName){
 });
 
 app.controller('myCtrl', function($scope,$http,pdfName) {
-    var containertop=document.getElementById('pdfcontainer').offsetTop - document.getElementById('pdfcontainer').clientHeight-40;
+    var containertop=document.getElementById('pdfcontainer').offsetTop - document.getElementById('pdfcontainer').clientHeight-260;
     //var containertop = 200;
     var containerleft=document.getElementById('pdfcontainer').offsetLeft+document.getElementById('pdfcontainer').clientWidth;
     $scope.nullsummarystyle={"position": "absolute","top":containertop,"left":"20","width":"20%"};
-    $scope.nullsummary={"height":"800px"};
+    $scope.nullsummary={"height":"450px"};
 	$scope.toolName="ReadTo";
 	$scope.tagLine="Enhance your reading experience...";
 	$scope.count=1;

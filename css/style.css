@@ -137,7 +137,7 @@ body{
     padding:15px;
     vertical-align: middle;
     display:block;
-    height:55px;
+    height:100px;
 }
 
 .summarycontent{
@@ -175,7 +175,7 @@ body{
     margin-top:15%;
     dispaly:inline-block;
     clear: both;
-width: 100%;
+    width: 100%;
 
 }
 .filecontent{

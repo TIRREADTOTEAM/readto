@@ -39,7 +39,7 @@ for(var i=0,j=url.length;i<j;++i){
     pageRendering = true;
     // Using promise to fetch the page
     pdfDoc.getPage(num).then(function(page) {
-      var viewport = page.getViewport(scale*1.5);
+      var viewport = page.getViewport(scale*.8);
       canvas.height = viewport.height;
       canvas.width = viewport.width;
 
